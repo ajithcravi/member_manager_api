@@ -1,11 +1,15 @@
-import { Sequelize } from "sequelize-typescript";
+import { Sequelize, SequelizeOptions } from "sequelize-typescript";
+import * as config from "../config.cjs";
+import { DbConfig, NodeEnv } from "@member-manager-api/type";
+import { Member } from "../models/Member";
 
-export const database = new Sequelize({
-  host: process.env['DB_HOST'],
-  database: process.env['DB_NAME'],
-  port: +process.env['DB_PORT']!,
-  dialect: 'postgres',
-  username: process.env['DB_USER'],
-  password: process.env['DB_PASSWORD'],
-  models: [__dirname + '/**/*.model.ts']
-})
+const env = process.env['NODE_ENV'] as unknown as NodeEnv | NodeEnv.local
+const dbConfig = config as unknown as DbConfig;
+
+const sequelize = new Sequelize(dbConfig[env]);
+
+sequelize.addModels([
+    Member
+])
+
+export const database = sequelize;
