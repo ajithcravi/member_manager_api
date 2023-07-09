@@ -1,5 +1,6 @@
 import { MemberAttributes, MemberCreationAttributes } from "@member-manager-api/type";
-import { Column, Model, PrimaryKey, Table, Unique, UpdatedAt } from "sequelize-typescript";
+import { AutoIncrement, Column, HasMany, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { MemberPropertyMap } from "./MemberPropertyMap";
 
 @Table({
     name: {
@@ -11,7 +12,6 @@ import { Column, Model, PrimaryKey, Table, Unique, UpdatedAt } from "sequelize-t
     freezeTableName: true
 })
 export class Member extends Model<MemberAttributes, MemberCreationAttributes>{
-
     @PrimaryKey
     @Column
     name!: string;
@@ -19,4 +19,7 @@ export class Member extends Model<MemberAttributes, MemberCreationAttributes>{
     @PrimaryKey
     @Column
     mobile!: string
+
+    @HasMany(() => MemberPropertyMap)
+    property!: MemberPropertyMap[]
 }

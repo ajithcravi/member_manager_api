@@ -11,7 +11,7 @@ module.exports = {
     },
     down: async () => {
         try {
-            await database.drop();
+            await database.drop({});
             console.info("Tables dropped");
         } catch (error) {
             console.error("Error in dropping Tables \n", error)

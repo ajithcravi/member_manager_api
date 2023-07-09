@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "build": "npx nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "db:migrate": "npx sequelize-cli db:migrate --env",
+    "db:migrate:undo": "npx sequelize-cli db:migrate:undo --env"
   },
   "private": true,
   "dependencies": {
