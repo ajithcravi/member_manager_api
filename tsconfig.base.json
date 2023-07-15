@@ -17,6 +17,7 @@
     "allowJs": true,
     "paths": {
       "@member-manager-api/database": ["libs/database/src/index.ts"],
+      "@member-manager-api/service": ["libs/service/src/index.ts"],
       "@member-manager-api/type": ["libs/type/src/index.ts"]
     }
   },

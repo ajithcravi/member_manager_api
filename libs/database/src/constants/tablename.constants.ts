@@ -1,3 +1,3 @@
 export const tablename = {
-    member: 'Member'
-}
+  member: 'Member'
+};

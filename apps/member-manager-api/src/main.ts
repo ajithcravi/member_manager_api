@@ -1,13 +1,14 @@
 import express from 'express';
+import { unitRoutes } from './routes/unit.routes';
 
-const host = process.env.HOST ?? 'localhost';
-const port = process.env.PORT ? Number(process.env.PORT) : 3000;
+const host = process.env.APP_HOST ?? 'localhost';
+const port = process.env.APP_PORT ? Number(process.env.APP_PORT) : 3000;
+
+console.log(host, port);
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send({ message: 'Hello API' });
-});
+app.use('/unit', unitRoutes);
 
 app.listen(port, host, () => {
   console.log(`[ ready ] http://${host}:${port}`);

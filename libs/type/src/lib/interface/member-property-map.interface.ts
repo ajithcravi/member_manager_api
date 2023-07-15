@@ -1,11 +1,12 @@
-import { Optional } from "sequelize";
+import { Optional } from 'sequelize';
 
 export interface MemberPropertyMapAttributes {
-    id: number;
-    memberId: number;
-    propertyId: number;
-    value: string;
-    unitId: number;
+  id: number;
+  memberId: number;
+  propertyId: number;
+  value: string;
+  unitId: number;
 }
 
-export interface MemberPropertyMapCreationalAttributes extends Optional<MemberPropertyMapAttributes, 'id'>{}
+export interface MemberPropertyMapCreationAttributes
+  extends Optional<MemberPropertyMapAttributes, 'id'> {}

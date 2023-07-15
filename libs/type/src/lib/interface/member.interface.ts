@@ -1,9 +1,10 @@
-import { Optional } from "sequelize";
+import { Optional } from 'sequelize';
 
 export interface MemberAttributes {
-    id: number;
-    name: string;
-    mobile: string;
+  id: number;
+  name: string;
+  mobile: string;
 }
 
-export interface MemberCreationAttributes extends Optional<MemberAttributes, 'id'>{}
+export interface MemberCreationAttributes
+  extends Optional<MemberAttributes, 'id'> {}

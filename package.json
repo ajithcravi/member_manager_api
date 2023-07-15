@@ -5,8 +5,10 @@
   "scripts": {
     "build": "npx nx build",
     "test": "nx test",
+    "start": "npx nx serve",
     "db:migrate": "npx sequelize-cli db:migrate --env",
-    "db:migrate:undo": "npx sequelize-cli db:migrate:undo --env"
+    "db:migrate:undo": "npx sequelize-cli db:migrate:undo --env",
+    "prettier-format": "prettier --config .prettierrc apps/**/*.ts libs/**/*.ts --write"
   },
   "private": true,
   "dependencies": {
@@ -41,7 +43,7 @@
     "jest-environment-node": "^29.4.1",
     "nx": "16.5.0",
     "nx-cloud": "latest",
-    "prettier": "^2.6.2",
+    "prettier": "^2.8.8",
     "sequelize-cli": "^6.6.1",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
