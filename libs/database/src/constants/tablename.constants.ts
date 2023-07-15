@@ -1,3 +1,6 @@
 export const tablename = {
-  member: 'Member'
+  member: 'Member',
+  memberProperty: 'MemberProperty',
+  memberPropertyMap: 'MemberPropertyMap',
+  unit: 'Unit'
 };

@@ -3,7 +3,6 @@ import {
   MemberCreationAttributes
 } from '@member-manager-api/type';
 import {
-  AutoIncrement,
   Column,
   HasMany,
   Model,

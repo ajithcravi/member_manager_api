@@ -2,13 +2,7 @@ import {
   MemberPropertyMapAttributes,
   MemberPropertyMapCreationAttributes
 } from '@member-manager-api/type';
-import {
-  Column,
-  ForeignKey,
-  Model,
-  PrimaryKey,
-  Table
-} from 'sequelize-typescript';
+import { Column, ForeignKey, Model, Table } from 'sequelize-typescript';
 import { Member } from './Member';
 import { MemberProperty } from './MemberProperty';
 import { Unit } from './Unit';
@@ -26,12 +20,10 @@ export class MemberPropertyMap extends Model<
   MemberPropertyMapAttributes,
   MemberPropertyMapCreationAttributes
 > {
-  @PrimaryKey
   @ForeignKey(() => Member)
   @Column
   memberId!: number;
 
-  @PrimaryKey
   @ForeignKey(() => MemberProperty)
   @Column
   propertyId!: number;
@@ -41,5 +33,5 @@ export class MemberPropertyMap extends Model<
 
   @ForeignKey(() => Unit)
   @Column
-  unitId!: string;
+  unitId!: number;
 }

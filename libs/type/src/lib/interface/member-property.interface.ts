@@ -1,9 +1,10 @@
 import { Optional } from 'sequelize';
+import { Datatype } from '../enum';
 
 export interface MemberPropertyAttributes {
   id: number;
   property: string;
-  type: string | null;
+  type: Datatype;
 }
 
 export interface MemberPropertyCreationAttributes

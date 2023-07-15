@@ -27,5 +27,5 @@ export class Unit extends Model<UnitAttributes, UnitCreationAttributes> {
   unit!: string;
 
   @BelongsToMany(() => MemberProperty, () => MemberPropertyMap)
-  property!: MemberProperty;
+  property!: MemberProperty[];
 }

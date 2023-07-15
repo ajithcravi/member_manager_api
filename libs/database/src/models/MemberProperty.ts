@@ -3,7 +3,6 @@ import {
   MemberPropertyCreationAttributes
 } from '@member-manager-api/type';
 import {
-  AllowNull,
   BelongsToMany,
   Column,
   DataType,
@@ -42,7 +41,6 @@ export class MemberProperty extends Model<
   property!: string;
 
   @PrimaryKey
-  @AllowNull
   @Column({ type: DataType.ENUM(...Object.values(Datatype)) })
   type!: Datatype;
 
@@ -50,5 +48,5 @@ export class MemberProperty extends Model<
   memberProperties!: MemberPropertyMap[];
 
   @BelongsToMany(() => Unit, () => MemberPropertyMap)
-  units!: Unit;
+  units!: Unit[];
 }
